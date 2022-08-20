@@ -9,42 +9,66 @@ import Paper from '@mui/material/Paper';
 
 import EditIcon from '@mui/icons-material/Edit';
 
+import ExpensesBarChart from './components/ExpensesBarChart';
+import Navbar from './components/Navbar.js';
+
 
 const CreateButton = () => {
   
   return (
-    <Card component={Button} sx={{ backgroundColor: 'primary.main', color: 'white' }}>
-        <CardContent>
-          <Box sx={{ 
-              display: 'flex', 
-              flexDirection: 'row',
-              
-          }}>
-            <EditIcon />
-            <Typography>入力する</Typography>
-          </Box>
-        </CardContent>
-      </Card>
+    <Button
+      variant="contained"
+      sx={{ width: 200, height: 100 }}
+    >
+      <EditIcon sx={{ fontSize: 24, marginRight: 1 }} />
+      <Typography sx={{ fontSize: 24 }}>
+        作成する
+      </Typography>
+    </Button>
   );
 }
 
+const status = {
+  totalIncome: 200000,
+  totalOutgo: 180000,
+};
 
 export default function Home() {
 
-
   return (
-    <Grid container>
-      <Grid item xs={12}>
-        <Typography variant="h4" >2022年8月</Typography>
+    <Box>
+      <Grid container spacing={8}>
+        <Grid item xs={12}>
+          <Paper width="100%" elevation={0}>
+            <Typography variant="h4" width="100%" textAlign="center">2022年8月23日</Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12}>
+          <Grid container justifyContent="space-evenly">
+            <Grid item xs={4}>
+              <Paper>
+                <Typography>収入</Typography>
+                <Typography variant="h5">{status.totalIncome}</Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={4}>
+              <Paper>
+                <Typography>支出</Typography>
+                <Typography variant="h5">{status.totalOutgo}</Typography>
+              </Paper>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Paper elevation={0}>
+            <Typography textAlign="left" variant="h6">最近の支出グラフ</Typography>
+            <ExpensesBarChart />
+          </Paper>
+        </Grid>
+        <Grid item xs={12} my={5}>
+          <CreateButton />
+        </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <Paper>
-          <Typography>直近の支出グラフ</Typography>
-        </Paper>
-      </Grid>
-      <Grid item xs={12}>
-        <CreateButton />
-      </Grid>
-    </Grid>
+    </Box>
   )
 }

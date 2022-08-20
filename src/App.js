@@ -1,30 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
 
-import ClippedDrawer from './components/ClippedDrawer';
-import Typography from '@mui/material/Typography';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LeftDrawer from './components/LeftDrawer';
+import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
 
+import Layout from './pages/Layout.js';
 import Home from './Home.js';
+import New from './pages/New.js';
+import DataTable from './pages/DataTable.js';
 import MonthlyReport from './MonthlyReport.js';
+import YearlyReport from './YearlyReport.js';
 
 
 
 export default function App() {
   return (
-    <div className="App">
-      <ClippedDrawer>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/">
-              <Route index element={<Home />} />
-              <Route path="/report">
-                <Route path="monthly" element={<MonthlyReport />} />
-              </Route>
+    <div id="app">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="index" element={<Home />} />
+            <Route path="new" element={<New />} />
+            <Route path="all" element={<DataTable />} />
+            <Route path="report">
+              <Route path="month" element={<MonthlyReport />} />
+              <Route path="year" element={<YearlyReport />} />
             </Route>
-          </Routes>
-        </BrowserRouter>
-      </ClippedDrawer>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

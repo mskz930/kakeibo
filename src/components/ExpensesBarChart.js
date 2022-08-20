@@ -52,7 +52,6 @@ export default function ExpensesBarChart() {
     <Box>
       <Bar
         height={300}
-        width={300}
         data={data} 
         options={options}
       />

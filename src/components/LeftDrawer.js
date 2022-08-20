@@ -21,12 +21,18 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 
+import { Link } from 'react-router-dom';
+
 import HomeIcon from '@mui/icons-material/Home';
 
 
 const drawerWidth = 260;
 
-const sideMenus = ['ホーム', '月次レポート', '年次レポート'];
+const sideMenus = [
+  {text: 'ホーム', link: "/"}, 
+  {text: '月次レポート', link: "/report/month"},
+  {text: '年次レポート', link: "/report/year"},
+];
 const sideMenuIcons = [<HomeIcon />, <AnalyticsIcon />, <AnalyticsIcon />]
 
 function AvatarMenu() {
@@ -65,18 +71,7 @@ function AvatarMenu() {
 
 export default function ClippedDrawer(props) {
   return (
-    <Box sx={{ display: 'flex' }}>
-      {/*
-      <CssBaseline />
-
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div" flexGrow={1} textAlign="left">
-            家計簿
-          </Typography>
-          <Button sx={{ color: 'white' }} size="large">LOGOUT</Button>
-        </Toolbar>
-  </AppBar>*/}
+    <Box sx={{ display: 'flex', height: '100%' }}>
       <Drawer
         variant="permanent"
         sx={{
@@ -85,18 +80,19 @@ export default function ClippedDrawer(props) {
           [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
         }}
       >
+        <CssBaseline />
         <Box sx={{ overflow: 'auto' }}>
           <Typography variant="h5" component="h6" sx={{ p: 2, textAlign: 'left' }}>
             家計簿App
           </Typography>
           <List>
-            {sideMenus.map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
+            {sideMenus.map((item, index) => (
+              <ListItem key={index} disablePadding>
+                <ListItemButton component="a" href={item.link}>
                   <ListItemIcon sx={{ color: 'inherit' }}>
                     {sideMenuIcons[index]}
                   </ListItemIcon>
-                  <ListItemText primary={text} />
+                  <ListItemText primary={item.text} />
                 </ListItemButton>
               </ListItem>
             ))}
@@ -116,12 +112,21 @@ export default function ClippedDrawer(props) {
           </List>
         </Box>
         <Box sx={{ m: 1 }}>
-          <Button variant="contained" fullWidth> {/* #f44336 */}
+          <ListItemButton > {/* #f44336 */}
             Logout
-          </Button>
+          </ListItemButton>
         </Box>
       </Drawer>
-      <Box component="main" sx={{ p: 3, height: 'auto', minHeight: '100%' }}>
+      <Box 
+        component="main"
+        sx={{
+          height: 'auto',
+          minHeight: '100vh',
+          height: '100%',
+          width: `calc(100vw - ${drawerWidth}px)`,
+          p: 3
+        }}
+      >
         {props.children}
       </Box>
     </Box>
