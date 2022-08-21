@@ -9,8 +9,8 @@ import Layout from './pages/Layout.js';
 import Home from './Home.js';
 import New from './pages/New.js';
 import DataTable from './pages/DataTable.js';
-import MonthlyReport from './MonthlyReport.js';
-import YearlyReport from './YearlyReport.js';
+import MonthlyReport from './pages/MonthlyReport.js';
+import YearlyReport from './pages/YearlyReport.js';
 
 
 

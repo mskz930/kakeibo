@@ -130,9 +130,9 @@ export default function ClippedDrawer(props) {
           minHeight: '100vh',
           height: '100%',
           width: `calc(100vw - ${drawerWidth}px)`,
-          paddingTop: 5,
-          paddingLeft: 10,
-          paddingRight: 10,
+          paddingTop: 3,
+          paddingLeft: 5,
+          paddingRight: 5,
         }}
       >
         <Outlet />
