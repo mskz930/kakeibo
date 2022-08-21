@@ -40,32 +40,45 @@ const SelectPayment = () => {
 export default function New() {
 
   return (
-      <Box maxWidth={400}>
-        <Typography variant="h5">新規入力</Typography>
-        <Grid container spacing={3}>
+    <Box
+      sx={{
+        width: 700,
+        mx: 'auto'
+      }}
+    >
+      <Typography
+        variant="h5"
+        py={5}
+        align="center"
+      >
+        入力フォーム
+      </Typography>
+
+      <Grid container spacing={3}>
         <Grid item xs={12}>
-            <TextField id="form-date" label="日付" variant="outlined" fullWidth />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField id="form-title" label="タイトル" variant="outlined" fullWidth />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField id="form-price" label="金額" variant="outlined" fullWidth />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField id="form-category" label="カテゴリ" variant="outlined" fullWidth />
-          </Grid>
-          <Grid item xs={12}>
-            <SelectPayment />
-          </Grid>
-          <Grid item xs={12}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between' }} >
-              <Button variant="contained" color='error'>キャンセル</Button>
-              <Button variant="contained">確定</Button>
-            </Box>
-          </Grid>
+          <TextField id="form-date" label="日付" variant="outlined" fullWidth />
         </Grid>
-        
-      </Box>
-    )
+        <Grid item xs={12}>
+          <TextField id="form-title" label="タイトル" variant="outlined" fullWidth />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField id="form-price" label="金額" variant="outlined" fullWidth />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField id="form-category" label="カテゴリ" variant="outlined" fullWidth />
+        </Grid>
+        <Grid item xs={12}>
+          <SelectPayment />
+        </Grid>
+        <Grid item xs={12}>
+          <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button variant="contained" sx={{ m: 1, p: 1 }}>確定</Button>
+            <Button variant="contained" color="error" sx={{ m: 1, p: 1 }}>キャンセル</Button>
+          </Box>
+
+        </Grid>
+      </Grid>
+
+    </Box>
+  )
 }

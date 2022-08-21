@@ -43,41 +43,35 @@ const DeleteButton = () => {
 export default function DataTable() {
 
   return (
-      <Box p={2}>
-        <Typography variant="h6" textAlign="left">
-          支出一覧
-        </Typography>
-        <TableContainer>
-          <Table sx={{ minWidth: 650 }} aria-label="" >
-            <TableHead>
-              <TableRow>
-                <TableCell>日付</TableCell>
-                <TableCell>内容</TableCell>
-                <TableCell>金額</TableCell>
-                <TableCell>支払い方法</TableCell>
-                <TableCell>カテゴリ</TableCell>
-                <TableCell>メモ</TableCell>
-                <TableCell>編集</TableCell>
-                <TableCell>削除</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map(row => (
-                <TableRow>
-                  <TableCell>{row.date}</TableCell>
-                  <TableCell>{row.content}</TableCell>
-                  <TableCell>{row.price}</TableCell>
-                  <TableCell>{row.payment}</TableCell>
-                  <TableCell>{row.category}</TableCell>
-                  <TableCell>{row.memo}</TableCell>
-                  <TableCell><EditButton /></TableCell>
-                  <TableCell><DeleteButton /></TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Box>
-      
+    <TableContainer>
+      <Table sx={{ minWidth: 650 }} aria-label="" >
+        <TableHead>
+          <TableRow>
+            <TableCell>日付</TableCell>
+            <TableCell>内容</TableCell>
+            <TableCell>金額</TableCell>
+            <TableCell>支払い方法</TableCell>
+            <TableCell>カテゴリ</TableCell>
+            <TableCell>メモ</TableCell>
+            <TableCell>編集</TableCell>
+            <TableCell>削除</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map(row => (
+            <TableRow>
+              <TableCell>{row.date}</TableCell>
+              <TableCell>{row.content}</TableCell>
+              <TableCell>{row.price}</TableCell>
+              <TableCell>{row.payment}</TableCell>
+              <TableCell>{row.category}</TableCell>
+              <TableCell>{row.memo}</TableCell>
+              <TableCell><EditButton /></TableCell>
+              <TableCell><DeleteButton /></TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }

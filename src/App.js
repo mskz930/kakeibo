@@ -4,6 +4,7 @@ import './App.css';
 import LeftDrawer from './components/LeftDrawer';
 import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
 
+import Login from './pages/Login.js';
 import Layout from './pages/Layout.js';
 import Home from './Home.js';
 import New from './pages/New.js';
@@ -18,6 +19,7 @@ export default function App() {
     <div id="app">
       <BrowserRouter>
         <Routes>
+          <Route path="login" element={<Login />} />
           <Route path="/" element={<Layout />}>
             <Route path="index" element={<Home />} />
             <Route path="new" element={<New />} />

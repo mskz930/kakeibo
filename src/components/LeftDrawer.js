@@ -29,9 +29,9 @@ import HomeIcon from '@mui/icons-material/Home';
 const drawerWidth = 260;
 
 const sideMenus = [
-  {text: 'ホーム', link: "/"}, 
-  {text: '月次レポート', link: "/report/month"},
-  {text: '年次レポート', link: "/report/year"},
+  { text: 'ホーム', link: "/" },
+  { text: '月次レポート', link: "/report/month" },
+  { text: '年次レポート', link: "/report/year" },
 ];
 const sideMenuIcons = [<HomeIcon />, <AnalyticsIcon />, <AnalyticsIcon />]
 
@@ -82,7 +82,7 @@ export default function ClippedDrawer(props) {
       >
         <CssBaseline />
         <Box sx={{ overflow: 'auto' }}>
-          <Typography variant="h5" component="h6" sx={{ p: 2, textAlign: 'left' }}>
+          <Typography variant="h5" component="h6" sx={{ p: 2 }}>
             家計簿App
           </Typography>
           <List>
@@ -117,14 +117,13 @@ export default function ClippedDrawer(props) {
           </ListItemButton>
         </Box>
       </Drawer>
-      <Box 
+      <Box
         component="main"
         sx={{
           height: 'auto',
           minHeight: '100vh',
           height: '100%',
           width: `calc(100vw - ${drawerWidth}px)`,
-          p: 3
         }}
       >
         {props.children}

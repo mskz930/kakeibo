@@ -20,6 +20,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 import { Link, Outlet } from 'react-router-dom';
 
@@ -29,9 +30,9 @@ import HomeIcon from '@mui/icons-material/Home';
 const drawerWidth = 260;
 
 const sideMenus = [
-  {text: 'ホーム', link: "/index"}, 
-  {text: '月次レポート', link: "/report/month"},
-  {text: '年次レポート', link: "/report/year"},
+  { text: 'ホーム', link: "/index" },
+  { text: '月次レポート', link: "/report/month" },
+  { text: '年次レポート', link: "/report/year" },
 ];
 const sideMenuIcons = [<HomeIcon />, <AnalyticsIcon />, <AnalyticsIcon />]
 
@@ -81,8 +82,8 @@ export default function ClippedDrawer(props) {
         }}
       >
         <CssBaseline />
-        <Box sx={{ overflow: 'auto' }}>
-          <Typography variant="h5" component="h6" sx={{ p: 2, textAlign: 'left' }}>
+        <Box sx={{ overflow: 'auto', height: '100%' }}>
+          <Typography variant="h5" sx={{ p: 2, textAlign: 'center' }}>
             家計簿App
           </Typography>
           <List>
@@ -110,21 +111,28 @@ export default function ClippedDrawer(props) {
               </ListItem>
             ))}
           </List>
-        </Box>
-        <Box sx={{ m: 1 }}>
-          <ListItemButton > {/* #f44336 */}
-            Logout
-          </ListItemButton>
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton component={Link} to="/login">
+                <ListItemIcon sx={{ color: 'inherit' }}>
+                  <LogoutIcon />
+                </ListItemIcon>
+                <ListItemText primary="Logout" />
+              </ListItemButton>
+            </ListItem>
+          </List>
         </Box>
       </Drawer>
-      <Box 
+      <Box
         component="main"
         sx={{
           height: 'auto',
           minHeight: '100vh',
           height: '100%',
           width: `calc(100vw - ${drawerWidth}px)`,
-          p: 3
+          paddingTop: 5,
+          paddingLeft: 10,
+          paddingRight: 10,
         }}
       >
         <Outlet />
