@@ -78,7 +78,6 @@ export default function New() {
 
         </Grid>
       </Grid>
-
     </Box>
   )
 }
