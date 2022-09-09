@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 
-import InputModalButton from './InputModalButton.js';
+import InputModal from './InputModal.js';
 
 const CustomBreadCrumbs = () => {
 
@@ -26,7 +26,7 @@ const MenuList = () => {
   return (
     <Box sx={{ display: 'block' }}>
       {/*<Button startIcon={<AddIcon />}>新規作成</Button>*/}
-      <InputModalButton text="新規作成" />
+      <InputModal text="新規作成" />
     </Box>
   )
 

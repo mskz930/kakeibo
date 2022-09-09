@@ -25,7 +25,7 @@ const ModalContent = () => {
   )
 }
 
-export default function InputModalButton({ text }) {
+export default function InputModal({ text }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -38,6 +38,7 @@ export default function InputModalButton({ text }) {
   return (
     <div>
       <Button
+        variant="contained"
         onClick={handleOpen}
         startIcon={<EditIcon />}
       >

@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
 
 import Login from './pages/Login.js';
 import Layout from './pages/Layout.js';
-import Home from './Home.js';
+import Home from './pages/Home.js';
 import New from './pages/New.js';
 import DataTable from './pages/DataTable.js';
 import MonthlyReport from './pages/MonthlyReport.js';

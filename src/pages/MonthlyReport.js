@@ -8,6 +8,9 @@ export default function MonthlyReport() {
   return (
     <Box>
       <Navbar />
+      <Box>
+        
+      </Box>
     </Box>
   )
 
