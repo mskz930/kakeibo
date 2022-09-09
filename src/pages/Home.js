@@ -36,15 +36,29 @@ const status = {
 
 
 export default function Home() {
-  const month = new Date().getMonth()+1;
+  const month = new Date().getMonth() + 1;
 
 
   return (
     <Box>
       <Navbar />
-      <Paper>
-        <Typography>{month}月の使用状況</Typography>
-      </Paper>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Paper sx={{ padding: 1 }}>
+            <Typography>今月の使用状況</Typography>
+            <Box>
+
+            </Box>
+          </Paper>
+        </Grid>
+
+        <Grid item xs={12}>
+          <Paper sx={{ padding: 1 }}>
+            <Typography>履歴</Typography>
+          </Paper>
+        </Grid>
+      </Grid>
+
     </Box >
   )
 }
