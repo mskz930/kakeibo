@@ -26,7 +26,7 @@ const MenuList = () => {
   return (
     <Box sx={{ display: 'block' }}>
       {/*<Button startIcon={<AddIcon />}>新規作成</Button>*/}
-      <InputModal text="新規作成" />
+      <InputModal text="新規登録" />
     </Box>
   )
 

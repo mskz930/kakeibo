@@ -11,15 +11,16 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import SettingsIcon from '@mui/icons-material/Settings';
-import PersonIcon from '@mui/icons-material/Person';
-import AnalyticsIcon from '@mui/icons-material/Analytics';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
+import SettingsIcon from '@mui/icons-material/Settings';
+import PersonIcon from '@mui/icons-material/Person';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import CalculateIcon from '@mui/icons-material/Calculate';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 import { Link, Outlet } from 'react-router-dom';
@@ -33,8 +34,9 @@ const sideMenus = [
   { text: 'ホーム', link: "/index" },
   { text: '月次レポート', link: "/report/month" },
   { text: '年次レポート', link: "/report/year" },
+  { text: 'シミュレーション', link: '/simulate'}
 ];
-const sideMenuIcons = [<HomeIcon />, <AnalyticsIcon />, <AnalyticsIcon />]
+const sideMenuIcons = [<HomeIcon />, <AnalyticsIcon />, <AnalyticsIcon />, <CalculateIcon />]
 
 function AvatarMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -66,7 +68,6 @@ function AvatarMenu() {
         <MenuItem onClick={handleClose}>Setting</MenuItem>
       </Menu>
     </>
-
   )
 }
 
@@ -78,13 +79,13 @@ export default function ClippedDrawer(props) {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box', backgroundColor: '#2C3E50', color: '#fff' },
         }}
       >
         <CssBaseline />
         <Box sx={{ overflow: 'auto', height: '100%' }}>
           <Typography variant="h5" sx={{ p: 2, textAlign: 'center' }}>
-            家計簿App
+            My 家計簿
           </Typography>
           <List>
             {sideMenus.map((item, index) => (
@@ -133,6 +134,7 @@ export default function ClippedDrawer(props) {
           paddingTop: 3,
           paddingLeft: 5,
           paddingRight: 5,
+          backgroundColor: '#ffffff',
         }}
       >
         <Outlet />

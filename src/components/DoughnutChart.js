@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Box, Paper, Typography } from '@mui/material';
 import { Doughnut } from 'react-chartjs-2';
-import {Chart,registerables  } from 'chart.js'
+import { Chart, registerables } from 'chart.js'
 Chart.register(...registerables);
 
+/*
 const data = {
   labels: [
     'Red',
@@ -21,14 +22,16 @@ const data = {
   }]
 };
 
-const options = {
-  maintainAspectRatio: false,
-  layout: {
-    padding: 10
-  },
-};
+*/
 
-export default function ExpensesDoughnutChart() {
+export default function DoughnutChart({data}) {
+
+  const options = {
+    maintainAspectRatio: false,
+    layout: {
+      padding: 10
+    },
+  };
 
   return (
     <Box>

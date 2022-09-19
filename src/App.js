@@ -11,7 +11,7 @@ import New from './pages/New.js';
 import DataTable from './pages/DataTable.js';
 import MonthlyReport from './pages/MonthlyReport.js';
 import YearlyReport from './pages/YearlyReport.js';
-
+import Simulate from './pages/Simulate.js';
 
 
 export default function App() {
@@ -28,6 +28,7 @@ export default function App() {
               <Route path="month" element={<MonthlyReport />} />
               <Route path="year" element={<YearlyReport />} />
             </Route>
+            <Route path="simulate" element={<Simulate />} />
           </Route>
         </Routes>
       </BrowserRouter>
